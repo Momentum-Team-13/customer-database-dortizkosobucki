@@ -552,3 +552,9 @@ const customers = [
     nat: 'US'
   }
 ]
+
+// function abbrevToFull(fullName) {
+//   const idx = customers.findIndex(function (name) {
+//     return "customer.name.title" && "customer.name.first" && "customer.name.last" === fullName.toUpperCase()
+//   })
+// }

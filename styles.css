@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aquamarine;
+    padding: 20px;
+    margin: 0;
+}
+
+main {
+    background-color: red;
+    border: 2px solid black;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#customerList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: blueviolet;
+}
+
+.img {
+    display: inline-block;
+    block-size: 100px;
+
+}
