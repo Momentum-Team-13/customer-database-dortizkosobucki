@@ -28,13 +28,17 @@ h1 {
 }
 
 img {
-    display: inline-block;
     block-size: 100px;
-
 }
 
 .customer {
     border: 2px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    width: 350px;
+    height: 350px;
+    align-items: center;
+    justify-content: center;
 }
 
 .name {

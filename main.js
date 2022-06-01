@@ -1,3 +1,5 @@
+
+
 console.log(customers)
 //access to the customer list
 
@@ -9,48 +11,42 @@ for (let customer of customers) {
     let customerElement = document.createElement("div")
     customerElement.classList.add("customer")
 
-    let contentElement = document.createElement("article")
-
-
     //customer image
     let pictureElement = document.createElement("img")
-    pictureElement.src = `${customer.picture.thumbnail}`
+    pictureElement.src = `${customer.picture.large}`
     pictureElement.alt = "Customer Thumbnail"
+    customerElement.appendChild(pictureElement)
 
-    contentElement.appendChild(pictureElement)
-    customerElement.appendChild(contentElement)
 
     //full name
     let nameElement = document.createElement("h2")
     nameElement.innerText = `Name: ${customer.name.title} ${customer.name.first} ${customer.name.last}`
     nameElement.classList.add("name")
-    contentElement.appendChild(nameElement)
-
+    customerElement.appendChild(nameElement)
 
 
     //address
     let locationElement = document.createElement("div")
-    locationElement.innerText = `Address: ${customer.location.street.number} ${customer.location.street.name}, ${customer.location.city}, ${customer.location.state}, ${customer.location.postcode}`
-    contentElement.appendChild(locationElement)
+    let stateAbbr = (nameToAbbr(customer.location.state))
+    locationElement.innerText = `Address: ${customer.location.street.number} ${customer.location.street.name}, ${customer.location.city}, ${stateAbbr}, ${customer.location.postcode}`
+    customerElement.appendChild(locationElement)
 
     //phone number
     let phoneElement = document.createElement("div")
-
     phoneElement.innerText = `Cell Phone: ${customer.cell}`
-    contentElement.appendChild(phoneElement)
+    customerElement.appendChild(phoneElement)
 
     //birthday
     let dobElement = document.createElement("div")
-
-    dobElement.innerText = `DOB: ${customer.dob.date}`
-    contentElement.appendChild(dobElement)
+    let dobFormat = moment(customer.dob.dates).format("MMM Do YYYY");
+    dobElement.innerText = `DOB: ${dobFormat}`
+    customerElement.appendChild(dobElement)
 
     //customer dates
     let registeredElement = document.createElement("div")
-
-    registeredElement.innerText = `Registered: ${customer.registered.date}`
-    contentElement.appendChild(registeredElement)
-
+    let registeredDate = moment(customer.registered.date).format("MMM Do YYYY");
+    registeredElement.innerText = `Customer Since: ${registeredDate}`
+    customerElement.appendChild(registeredElement)
     customerList.appendChild(customerElement)
 
 }
