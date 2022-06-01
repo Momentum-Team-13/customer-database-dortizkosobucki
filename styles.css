@@ -27,8 +27,17 @@ h1 {
     background-color: blueviolet;
 }
 
-.img {
+img {
     display: inline-block;
     block-size: 100px;
 
+}
+
+.customer {
+    border: 2px solid black;
+}
+
+.name {
+    font-size: 20px;
+    color: aqua;
 }
