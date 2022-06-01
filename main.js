@@ -17,24 +17,22 @@ for (let customer of customers) {
     pictureElement.alt = "Customer Thumbnail"
     customerElement.appendChild(pictureElement)
 
-
     //full name
     let nameElement = document.createElement("h2")
     nameElement.innerText = `Name: ${customer.name.title} ${customer.name.first} ${customer.name.last}`
     nameElement.classList.add("name")
     customerElement.appendChild(nameElement)
 
+    //phone number
+    let phoneElement = document.createElement("div")
+    phoneElement.innerText = `Cell Phone: ${customer.cell}\n`
+    customerElement.appendChild(phoneElement)
 
     //address
     let locationElement = document.createElement("div")
     let stateAbbr = (nameToAbbr(customer.location.state))
     locationElement.innerText = `Address: ${customer.location.street.number} ${customer.location.street.name}, ${customer.location.city}, ${stateAbbr}, ${customer.location.postcode}`
     customerElement.appendChild(locationElement)
-
-    //phone number
-    let phoneElement = document.createElement("div")
-    phoneElement.innerText = `Cell Phone: ${customer.cell}`
-    customerElement.appendChild(phoneElement)
 
     //birthday
     let dobElement = document.createElement("div")
